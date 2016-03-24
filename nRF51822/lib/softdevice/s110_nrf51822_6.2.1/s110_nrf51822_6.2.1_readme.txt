@@ -1,0 +1,13 @@
+s110_nrf51822_6.2.1
+
+This release consists of the following:
+- This readme file
+- The s110_nrf51822_6.2.1 license
+- The s110_nrf51822_6.2.1 softdevice (binary hex file)
+- The s110_nrf51822_6.2.1 API (softdevice header files)
+- The s110_nrf51822_6.2.1 release notes
+
+IMPORTANT NOTE: If you intend to use the softdevice with the nRF51
+SDK, you need to install nRF51 SDK versions 5.2.0 and manually replace
+the header files in the SDK nrf51822\Include\s110 with the attached
+include folder: s110_nrf51822_6.2.1_API\include

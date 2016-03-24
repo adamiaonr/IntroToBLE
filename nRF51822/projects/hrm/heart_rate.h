@@ -10,6 +10,7 @@
 extern "C" {
 #endif
 
+#include "error.h"
 #include "ble.h"
 
 error_t heart_rate_init    ( void );

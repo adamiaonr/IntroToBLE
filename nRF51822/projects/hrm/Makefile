@@ -3,6 +3,7 @@ BOARD           := BOARD_PCA10001
 DEVICE_VARIANT  := xxaa
 USE_SOFTDEVICE  := S110
 OUTPUT_FILENAME := ble_hrm
+CFG_BOARD       := 2
 
 # Additional Source Paths
 C_SOURCE_PATHS += boards/
@@ -43,11 +44,14 @@ C_SOURCE_FILES += nrf_delay.c
 
 # Make sure we're pointing to the right SDK version
 ROOT_PATH = ../../
-SDK_PATH = $(ROOT_PATH)lib/sdk/nRF51_SDK_v5.2.0.39364/Nordic/nrf51822/
-SOFTDEVICE = $(ROOT_PATH)lib/softdevice/s110_nrf51822_6.0.0/s110_nrf51822_6.0.0_softdevice.hex
+#SDK_PATH = $(ROOT_PATH)lib/sdk/nRF51_SDK_v5.2.0.39364/Nordic/nrf51822/
+SDK_PATH = $(ROOT_PATH)lib/sdk/nrf51_sdk_v6_1_0_b2ec2e6/nrf51822/
+#SOFTDEVICE = $(ROOT_PATH)lib/softdevice/s110_nrf51822_6.0.0/s110_nrf51822_6.0.0_softdevice.hex
+SOFTDEVICE = $(ROOT_PATH) lib/softdevice/s110_nrf51822_6.2.1/s110_nrf51822_6.2.1_softdevice.hex
 
 # Include the correct SoftDevice header files
-INCLUDEPATHS += -I"$(ROOT_PATH)lib/softdevice/s110_nrf51822_6.0.0/s110_nrf51822_6.0.0_API/include"
+INCLUDEPATHS += -I"$(ROOT_PATH)lib/softdevice/s110_nrf51822_6.2.1/s110_nrf51822_6.2.1_API/include"
+INCLUDEPATHS += -I"$(ROOT_PATH)lib/sdk/nrf51_sdk_v6_1_0_b2ec2e6/nrf51822/Include"
 
 # Local and SDK include paths
 INCLUDEPATHS += -I"."
@@ -58,6 +62,7 @@ INCLUDEPATHS += -I"$(SDK_PATH)Include/ble"
 INCLUDEPATHS += -I"$(SDK_PATH)Include/ble/ble_services"
 INCLUDEPATHS += -I"$(SDK_PATH)Include/simple_uart"
 INCLUDEPATHS += -I"$(SDK_PATH)Include/sd_common"
+INCLUDEPATHS += -I"$(SDK_PATH)projects/common"
 
 # Additional Flags
 CFLAGS += -DBLE_STACK_SUPPORT_REQD

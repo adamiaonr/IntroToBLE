@@ -19,6 +19,7 @@ extern "C" {
 #endif
 
 #include "common.h"
+#include "compiler.h"
 
 #include "nrf_gpio.h"
 #include "app_timer.h"
@@ -34,6 +35,8 @@ extern "C" {
 /**************************************************************************/
 #define CFG_BOARD_PCA10000  1
 #define CFG_BOARD_PCA10001  2
+
+#define CFG_BOARD CFG_BOARD_PCA10001
 
 #if CFG_BOARD == 0
   #error CFG_BOARD is not defined or supported yet
